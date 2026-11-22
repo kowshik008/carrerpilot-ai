@@ -1,0 +1,386 @@
+/* ==============================================================================
+   CAREERPILOT AI — PREMIUM DARK THEME STYLESHEET
+   Palette:
+     Main Background:        #101C1D
+     Secondary Background:   #172728
+     Card Background:        #203536
+     Primary Teal:           #155E63
+     Accent Teal:            #36A6A0
+     Soft Mint:              #A9C9BD
+     Primary Text:           #F3F7F5
+     Secondary Text:         #A5B7B3
+     Borders:                #304747
+     Success:                #55A987
+     Warning:                #E4B35E
+     Error:                  #D77B69
+   ============================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Global Font & Body Reset */
+html, body, [class*="css"], .stApp {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    background-color: #101C1D !important;
+    color: #F3F7F5 !important;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #F3F7F5 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.025em !important;
+}
+
+p, span, label, div {
+    color: #F3F7F5;
+}
+
+/* Secondary & Muted Typography */
+.text-secondary, [data-testid="stMarkdownContainer"] p > em {
+    color: #A5B7B3 !important;
+}
+
+/* ==============================================================================
+   SIDEBAR STYLING
+   ============================================================================== */
+[data-testid="stSidebar"] {
+    background-color: #172728 !important;
+    border-right: 1px solid #304747 !important;
+}
+
+[data-testid="stSidebar"] hr {
+    border-color: #304747 !important;
+}
+
+/* Sidebar Radio Navigation */
+[data-testid="stSidebar"] [data-testid="stRadio"] > div {
+    gap: 6px !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadio"] label {
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: 10px !important;
+    padding: 10px 14px !important;
+    color: #A5B7B3 !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadio"] label:hover {
+    background-color: #203536 !important;
+    color: #F3F7F5 !important;
+    border-color: #304747 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadio"] label[data-checked="true"],
+[data-testid="stSidebar"] [data-testid="stRadio"] [aria-checked="true"] {
+    background-color: rgba(54, 166, 160, 0.12) !important;
+    color: #36A6A0 !important;
+    border: 1px solid rgba(54, 166, 160, 0.4) !important;
+    border-left: 4px solid #36A6A0 !important;
+    font-weight: 600 !important;
+}
+
+/* Hide Streamlit's default radio circle for cleaner nav */
+[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] > label > div:first-child {
+    display: none !important;
+}
+
+/* ==============================================================================
+   BUTTONS
+   ============================================================================== */
+.stButton > button {
+    background-color: #172728 !important;
+    color: #F3F7F5 !important;
+    border: 1px solid #304747 !important;
+    border-radius: 12px !important;
+    padding: 0.55rem 1.25rem !important;
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.stButton > button:hover {
+    background-color: #203536 !important;
+    border-color: #36A6A0 !important;
+    color: #36A6A0 !important;
+    box-shadow: 0 4px 14px rgba(54, 166, 160, 0.15) !important;
+    transform: translateY(-1px);
+}
+
+/* Primary Action Buttons */
+.stButton > button[kind="primary"],
+button[data-testid="baseButton-primary"] {
+    background: linear-gradient(135deg, #155E63 0%, #1e757b 100%) !important;
+    color: #F3F7F5 !important;
+    border: 1px solid #36A6A0 !important;
+    box-shadow: 0 4px 12px rgba(21, 94, 99, 0.3) !important;
+}
+
+.stButton > button[kind="primary"]:hover,
+button[data-testid="baseButton-primary"]:hover {
+    background: linear-gradient(135deg, #1e757b 0%, #36A6A0 100%) !important;
+    border-color: #A9C9BD !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 6px 18px rgba(54, 166, 160, 0.35) !important;
+}
+
+/* ==============================================================================
+   INPUTS, TEXTAREAS & SELECTORS
+   ============================================================================== */
+.stTextInput input,
+.stTextArea textarea,
+[data-baseweb="select"] > div,
+[data-baseweb="input"] > div {
+    background-color: #172728 !important;
+    color: #F3F7F5 !important;
+    border: 1px solid #304747 !important;
+    border-radius: 12px !important;
+    font-size: 0.95rem !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.stTextInput input:focus,
+.stTextArea textarea:focus,
+[data-baseweb="select"] > div:focus-within {
+    border-color: #36A6A0 !important;
+    box-shadow: 0 0 0 1px #36A6A0 !important;
+}
+
+/* Dropdown menus options */
+[data-baseweb="popover"],
+[data-baseweb="menu"] {
+    background-color: #172728 !important;
+    border: 1px solid #304747 !important;
+    border-radius: 10px !important;
+}
+
+[data-baseweb="menu"] li {
+    background-color: #172728 !important;
+    color: #F3F7F5 !important;
+}
+
+[data-baseweb="menu"] li:hover,
+[aria-selected="true"] {
+    background-color: #203536 !important;
+    color: #36A6A0 !important;
+}
+
+/* ==============================================================================
+   CARDS, METRICS & EXPANDERS
+   ============================================================================== */
+/* Streamlit Metric Container */
+[data-testid="stMetric"] {
+    background-color: #203536 !important;
+    border: 1px solid #304747 !important;
+    border-radius: 14px !important;
+    padding: 16px 20px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #A5B7B3 !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+}
+
+[data-testid="stMetricValue"] {
+    color: #36A6A0 !important;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+}
+
+/* Expanders */
+.streamlit-expanderHeader {
+    background-color: #203536 !important;
+    border: 1px solid #304747 !important;
+    border-radius: 12px !important;
+    color: #F3F7F5 !important;
+    font-weight: 600 !important;
+}
+
+.streamlit-expanderHeader:hover {
+    border-color: #36A6A0 !important;
+    color: #36A6A0 !important;
+}
+
+[data-testid="stExpanderDetails"] {
+    background-color: #172728 !important;
+    border: 1px solid #304747 !important;
+    border-top: none !important;
+    border-radius: 0 0 12px 12px !important;
+    padding: 16px !important;
+}
+
+/* ==============================================================================
+   TABS & PROGRESS BAR
+   ============================================================================== */
+.stTabs [data-baseweb="tab-list"] {
+    background-color: #172728 !important;
+    border-radius: 12px !important;
+    padding: 6px !important;
+    gap: 8px !important;
+    border: 1px solid #304747 !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 8px !important;
+    color: #A5B7B3 !important;
+    padding: 8px 18px !important;
+    background-color: transparent !important;
+    border: none !important;
+    font-weight: 500 !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: #203536 !important;
+    color: #36A6A0 !important;
+    border: 1px solid #304747 !important;
+    font-weight: 600 !important;
+}
+
+/* Progress Bar */
+.stProgress > div > div > div > div {
+    background-color: #36A6A0 !important;
+    border-radius: 10px !important;
+}
+
+.stProgress > div > div {
+    background-color: #172728 !important;
+    border-radius: 10px !important;
+}
+
+/* ==============================================================================
+   FILE UPLOADER & AUDIO INPUT
+   ============================================================================== */
+[data-testid="stFileUploader"] {
+    background-color: #203536 !important;
+    border: 2px dashed #304747 !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    transition: border-color 0.2s ease !important;
+}
+
+[data-testid="stFileUploader"]:hover {
+    border-color: #36A6A0 !important;
+}
+
+[data-testid="stFileUploader"] button {
+    background-color: #155E63 !important;
+    color: #F3F7F5 !important;
+    border: 1px solid #36A6A0 !important;
+}
+
+/* Audio input widget */
+[data-testid="stAudioInput"] {
+    background-color: #203536 !important;
+    border: 1px solid #304747 !important;
+    border-radius: 14px !important;
+    padding: 14px !important;
+}
+
+/* ==============================================================================
+   NOTIFICATIONS & ALERTS
+   ============================================================================== */
+.stAlert {
+    border-radius: 12px !important;
+    border-width: 1px !important;
+    font-weight: 500 !important;
+}
+
+div[data-testid="stAlert"]:has([data-testid="stAlert-success"]) {
+    background-color: rgba(85, 169, 135, 0.1) !important;
+    border-color: #55A987 !important;
+    color: #55A987 !important;
+}
+
+div[data-testid="stAlert"]:has([data-testid="stAlert-warning"]) {
+    background-color: rgba(228, 179, 94, 0.1) !important;
+    border-color: #E4B35E !important;
+    color: #E4B35E !important;
+}
+
+div[data-testid="stAlert"]:has([data-testid="stAlert-error"]) {
+    background-color: rgba(215, 123, 105, 0.1) !important;
+    border-color: #D77B69 !important;
+    color: #D77B69 !important;
+}
+
+div[data-testid="stAlert"]:has([data-testid="stAlert-info"]) {
+    background-color: rgba(54, 166, 160, 0.1) !important;
+    border-color: #36A6A0 !important;
+    color: #A9C9BD !important;
+}
+
+/* Horizontal dividers */
+hr {
+    border-color: #304747 !important;
+    margin: 24px 0 !important;
+}
+
+/* Custom Card Class for Rich HTML Blocks */
+.cp-card {
+    background-color: #203536;
+    border: 1px solid #304747;
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.cp-card:hover {
+    border-color: #36A6A0;
+}
+
+.cp-badge-teal {
+    background-color: rgba(54, 166, 160, 0.15);
+    color: #36A6A0;
+    border: 1px solid rgba(54, 166, 160, 0.4);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.cp-badge-success {
+    background-color: rgba(85, 169, 135, 0.15);
+    color: #55A987;
+    border: 1px solid rgba(85, 169, 135, 0.4);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.cp-badge-warning {
+    background-color: rgba(228, 179, 94, 0.15);
+    color: #E4B35E;
+    border: 1px solid rgba(228, 179, 94, 0.4);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.cp-badge-error {
+    background-color: rgba(215, 123, 105, 0.15);
+    color: #D77B69;
+    border: 1px solid rgba(215, 123, 105, 0.4);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
